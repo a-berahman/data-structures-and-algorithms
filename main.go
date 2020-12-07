@@ -1,14 +1,13 @@
 package main
 
-import tree "github.com/a-berahman/data-structures-and-algorithms/Tree"
+import (
+	"fmt"
+
+	"github.com/a-berahman/data-structures-and-algorithms/sort"
+)
 
 func main() {
-
-	var tree *tree.BinarySearchTree = &tree.BinarySearchTree{}
-	tree.InsertElement(8)
-	tree.InsertElement(3)
-	tree.InsertElement(10)
-	tree.InsertElement(1)
-	tree.InsertElement(6)
-	tree.String()
+	arr := []int{4, 9, 1, 4, 2, 7, 8, 0}
+	res := sort.QucikSort(arr)
+	fmt.Println(res)
 }
