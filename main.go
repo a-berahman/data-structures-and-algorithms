@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	arr := []int{4, 9, 1, 4, 2, 7, 8, 0}
-	res := sort.QucikSort(arr)
+	arr := []int{3, 4, 1, 2, 5}
+	res := sort.QucikSortTwo(arr)
 	fmt.Println(res)
 }

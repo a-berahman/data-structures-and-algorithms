@@ -1,6 +1,6 @@
 package sort
 
-func QucikSort(arr []int) []int {
+func QucikSortOne(arr []int) []int {
 	sort(arr, 0, len(arr)-1)
 	return arr
 }
