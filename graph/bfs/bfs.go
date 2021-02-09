@@ -1,9 +1,14 @@
-package graph
+package bfs
 
 import (
 	"container/list"
 	"fmt"
 )
+
+type Node struct {
+	Id        int
+	Neighbors map[int]*Node
+}
 
 func Graph() {
 	//initializing 4 nodes
@@ -37,6 +42,7 @@ func Traversing(n *Node) []*Node {
 
 	queue.PushBack(n)
 	visited[n.Id] = n
+
 	//traversing in queue value
 	for queue.Len() > 0 {
 		currNode := queue.Front()
@@ -55,9 +61,4 @@ func Traversing(n *Node) []*Node {
 		nodes = append(nodes, val)
 	}
 	return nodes
-}
-
-type Node struct {
-	Id        int
-	Neighbors map[int]*Node
 }
