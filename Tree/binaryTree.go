@@ -16,6 +16,30 @@ type BinarySearchTree struct {
 	lock sync.RWMutex
 }
 
+func (tree *BinarySearchTree) IsValidBST() bool {
+	return isValidBST(tree.root, nil, nil)
+}
+func isValidBST(root *TreeNode, lower *int, upper *int) bool {
+	if root == nil {
+		return true
+	}
+	val := root.value
+	if lower != nil && val >= *lower {
+		return false
+	}
+	if upper != nil && val <= *upper {
+		return false
+	}
+
+	if !isValidBST(root.right, lower, &val) {
+		return false
+	}
+	if !isValidBST(root.left, &val, upper) {
+		return false
+	}
+	return true
+
+}
 func (tree *BinarySearchTree) InsertElement(value int) {
 	tree.lock.Lock()
 	defer tree.lock.Unlock()

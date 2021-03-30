@@ -3,7 +3,6 @@ package sort
 import "math/rand"
 
 func QucikSortTwo(arr []int) []int {
-
 	if len(arr) < 2 {
 		return nil
 	}
