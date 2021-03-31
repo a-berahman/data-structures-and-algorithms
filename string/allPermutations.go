@@ -10,7 +10,6 @@ func GenerateAllPermutations(val []rune, left, right int) {
 			val[left], val[i] = val[i], val[left]
 			GenerateAllPermutations(val, left+1, right)
 			val[left], val[i] = val[i], val[left]
-
 		}
 	}
 
